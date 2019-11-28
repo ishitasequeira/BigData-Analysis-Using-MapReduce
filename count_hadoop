@@ -1,0 +1,17 @@
+CReate a directory in hadoop
+------------------------------------------------------
+create directory according analysis too 
+
+hadoop fs -mkdir -p /project/count/input
+
+-------------------------------------------------------------------------
+add the local file to hadoop
+
+hadoop fs -copyFromLocal src/dataset.csv /project/count/input/dataset.csv
+
+-------------------------------------------------------------------------
+
+run the mapreduce
+
+ hadoop jar out/artifacts/FinalProject_jar/FinalProject.jar CountMapReduce.CountDriver /project/count/input/dataset.csv /project/count/output
+
