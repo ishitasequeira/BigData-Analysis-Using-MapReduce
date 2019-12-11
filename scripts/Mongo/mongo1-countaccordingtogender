@@ -1,0 +1,28 @@
+> map
+function (){
+
+	if(this.sex == 1){
+		emit("MALE",1);
+	}else{
+		emit("FEMALE",1);
+	}
+}
+> reducer
+function (key,values){
+	
+	sum = 0;
+	values.forEach(function(v){
+		sum+=v;	
+
+
+	});
+
+	return sum;
+
+}
+
+>mapreduce
+db.dataset.mapReduce(map,reducer,{out:"analysisBaseOnGender"})
+
+> db.analysisBaseOnGender.find().pretty()
+

@@ -14,8 +14,8 @@ public class YearPartitionerMapper extends Mapper<LongWritable, Text, IntWritabl
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] tokens = value.toString().split(",");
-        String strDate = tokens[0];
-        if (!value.toString().startsWith("Y")) {
+        String strDate = tokens[1];
+        if (!value.toString().startsWith("I")) {
             year.set(Integer.parseInt(strDate));
             context.write(year, value);
         }

@@ -16,7 +16,7 @@ public class StandardDeviationMapper extends Mapper<Object, Text, Text, DoubleWr
       throws IOException, InterruptedException {
     String data = value.toString();
     String[] field = data.split(",");
-    if (!value.toString().startsWith("Y")) {
+    if (!value.toString().startsWith("I")) {
       double data_value = 0;
       if(!field[8].isEmpty())
 	data_value = Double.parseDouble(field[8]);

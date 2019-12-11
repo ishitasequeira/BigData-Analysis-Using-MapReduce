@@ -42,9 +42,9 @@ public class BloomFilterMapper extends Mapper<Object, Text, Text, NullWritable> 
     @Override
     public void map(Object key, Text value, Context context)
             throws IOException, InterruptedException {
-        if (!value.toString().startsWith("Y")) {
+        if (!value.toString().startsWith("I")) {
             String[] values = value.toString().split(",");
-            StateTopic sp = new StateTopic(values[1], values[5]);
+            StateTopic sp = new StateTopic(values[2], values[6]);
             if (stateTopicBloomFilter.mightContain(sp)) {
                 context.write(value, NullWritable.get());
             }

@@ -11,9 +11,9 @@ public class Top10Mapper1 extends Mapper<LongWritable, Text, Text, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context)
             throws IOException, InterruptedException {
-        if (!value.toString().startsWith("Y")) {
-            String location = value.toString().split(",")[2];
-            String chol = value.toString().split(",")[14];
+        if (!value.toString().startsWith("I")) {
+            String location = value.toString().split(",")[3];
+            String chol = value.toString().split(",")[15];
             System.out.println(chol+",1");
             context.write(new Text(location), new Text(chol + ",1"));
         }

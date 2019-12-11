@@ -11,14 +11,14 @@ public class MyMapper extends Mapper<Object, Text, CompositeKeyWritable, NullWri
   public void map(Object key, Text value, Context context)
       throws IOException, InterruptedException {
 
-    if (!value.toString().startsWith("Y")) {
+    if (!value.toString().startsWith("I")) {
       String[] values = value.toString().split(",");
       String location = null;
       String topic = null;
 
       try {
-        location = values[2];
-        topic = values[5];
+        location = values[3];
+        topic = values[6];
       } catch (Exception e) { }
 
       if (null != location || null != topic) {

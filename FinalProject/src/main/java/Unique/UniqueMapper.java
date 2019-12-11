@@ -11,8 +11,8 @@ public class UniqueMapper extends Mapper<LongWritable, Text, Text, NullWritable>
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        if(!value.toString().startsWith("Y")) {
-            context.write(new Text(value.toString().split(",")[6]), NullWritable.get());
+        if(!value.toString().startsWith("I")) {
+            context.write(new Text(value.toString().split(",")[7]), NullWritable.get());
         }
     }
 }
