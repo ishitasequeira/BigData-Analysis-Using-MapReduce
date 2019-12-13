@@ -1,0 +1,11 @@
+Acute Myocardial Infarction (Heart Attack)	max_data_value=150.0, min_data_value=-2.0, min_age=-2147483648, max_age=2147483647, min_chol=94, max_chol=200, max_thalach=2, min_thalach=0
+Cholesterol Abnormalities	max_data_value=128.0, min_data_value=-2.0, min_age=-2147483648, max_age=2147483647, min_chol=94, max_chol=200, max_thalach=2, min_thalach=0
+Coronary Heart Disease	max_data_value=130.0, min_data_value=-2.0, min_age=-2147483648, max_age=2147483647, min_chol=94, max_chol=200, max_thalach=2, min_thalach=0
+Diabetes	max_data_value=150.0, min_data_value=-2.0, min_age=-2147483648, max_age=2147483647, min_chol=94, max_chol=200, max_thalach=2, min_thalach=0
+Hypertension	max_data_value=120.0, min_data_value=-2.0, min_age=-2147483648, max_age=2147483647, min_chol=94, max_chol=200, max_thalach=2, min_thalach=0
+Major Cardiovascular Disease	max_data_value=128.0, min_data_value=-2.0, min_age=-2147483648, max_age=2147483647, min_chol=94, max_chol=200, max_thalach=2, min_thalach=0
+Nutrition	max_data_value=138.0, min_data_value=-2.0, min_age=-2147483648, max_age=2147483647, min_chol=94, max_chol=200, max_thalach=2, min_thalach=0
+Obesity	max_data_value=130.0, min_data_value=-2.0, min_age=-2147483648, max_age=2147483647, min_chol=94, max_chol=200, max_thalach=2, min_thalach=0
+Physical Inactivity	max_data_value=112.0, min_data_value=-2.0, min_age=-2147483648, max_age=2147483647, min_chol=94, max_chol=200, max_thalach=2, min_thalach=0
+Smoking	max_data_value=120.0, min_data_value=-2.0, min_age=-2147483648, max_age=2147483647, min_chol=94, max_chol=200, max_thalach=2, min_thalach=0
+Stroke	max_data_value=138.0, min_data_value=-2.0, min_age=-2147483648, max_age=2147483647, min_chol=94, max_chol=200, max_thalach=2, min_thalach=0

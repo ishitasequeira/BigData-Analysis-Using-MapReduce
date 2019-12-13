@@ -6,6 +6,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
+
 public class JoinMapper2 extends Mapper<LongWritable,Text,Text, Text> {
 
     @Override
