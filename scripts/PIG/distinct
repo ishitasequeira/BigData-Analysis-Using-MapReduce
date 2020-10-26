@@ -1,0 +1,9 @@
+5. Distinct Indicators
+
+dataset = LOAD '/finalproject/pig/distinct/input' USING PigStorage(',') AS (ID:int,Year:int, LocationAbbr:chararray, LocationDesc:chararray, PriorityArea1:chararray, Category:chararray, Topic:chararray, Indicator:chararray, Data_Value:double,Confidence_Limit_Low:double, Confidence_Limit_High:double, age:int,sex:int, cp:int, trestbps:int,chol:int, fbs:int, restecg:int, thalach :int, exang :int, oldpeak:double,slope:int, ca:int, thal:int, target:int);
+
+group_by_year = GROUP dataset BY Year;
+distinct_indicator = FOREACH group_by_year {indicator = DISTINCT dataset.Indicator;GENERATE FLATTEN(group), COUNT(indicator);}
+
+STORE distinct_indicator into 'hdfs://localhost:9000/finalproject/pig/distinct/output';
+

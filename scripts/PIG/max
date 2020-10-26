@@ -1,0 +1,8 @@
+ 3.Max thalach for each topic
+
+dataset = LOAD 'hdfs://localhost:9000/finalproject/pig/max/input' USING PigStorage(',') AS (ID:int,Year:int, LocationAbbr:chararray, LocationDesc:chararray, PriorityArea1:chararray, Category:chararray, Topic:chararray, Indicator:chararray, Data_Value:double,Confidence_Limit_Low:double, Confidence_Limit_High:double, age:int,sex:int, cp:int, trestbps:int,chol:int, fbs:int, restecg:int, thalach :int, exang :int, oldpeak:double,slope:int, ca:int, thal:int, target:int);
+location_group = group dataset by (Topic) ;
+
+max_thalach_foreach_topic = foreach location_group generate group, MAX(dataset.thalach) as max_thalach_foreach_topic;
+STORE max_thalach_foreach_topic into 'hdfs://localhost:9000/finalproject/pig/max/output';
+

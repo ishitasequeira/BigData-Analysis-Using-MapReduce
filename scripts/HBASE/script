@@ -1,0 +1,3 @@
+1. Load csv to hbase
+
+./hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.separator=, -Dimporttsv.columns="HBASE_ROW_KEY,mycf:year,mycf:locabbr,mycf:locdesc,mycf:priorityarea1,mycf:category,mycf:topic,mycf:indicator,mycf:datavalue,mycf:conflimitlow,mycf:conflimithigh,mycf:age,mycf:sex,mycf:cp,mycf:trestbps,mycf:chol,mycf:fbs,mycf:restecg,mycf:thalach,mycf:exang,mycf:oldpeak,mycf:slope,mycf:ca,mycf:thal,mycf:target" warehouse /project/hbase/input/test.csv

@@ -1,0 +1,24 @@
+
+HIVE
+
+for project => 
+hive is a datawarehouse
+HIVE → http://www.informit.com/articles/article.aspx?p=2756471&seqNum=4
+
+CREATE EXTERNAL TABLE IF NOT EXISTS dataset(ID int,Year INT,LocationAbbr STRING,LocatioDesc STRING,PriorityArea1 STRING,Category STRING,Topic STRING,Indicator STRING,Data_Value DOUBLE,Confidence_Limit_Low DOUBLE,Confidence_Limit_High DOUBLE,age INT,sex INT,cp INT,trestbps INT,chol INT,fbs INT,restecg INT, thalach INT, exang INT, oldpeak DOUBLE,slope INT,ca INT,thal INT,target INT) COMMENT 'dataset.csv' ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE LOCATION 'hdfs://localhost:9000/finalproject/hive/input';
+
+1.  Count of enteries for each state(LocationDesc) and sorted by state
+select locatiodesc, count(chol) from dataset group by locatiodesc order by locatiodesc;
+
+2. Count the number of entries for each Topic and sort it by count
+select value , Topic from (select count(*) as value, Topic from dataset group by Topic ) a order by value;
+
+3. Average female datavalue per location
+select locatiodesc, avg(data_value) from dataset where sex =1 group by locatiodesc ;
+
+4. summarization max of
+select year, max(chol), min(chol), avg(chol) from dataset group by year;
+
+5. JOIN
+
+select a.locatiodesc, a.countRows, b.avgDataValue from (select locatiodesc, COUNT(Data_Value) as countRows from dataset group by locatiodesc) a join (select locatiodesc, AVG(Data_Value) as avgDataValue from dataset group by locatiodesc) b on a.locatiodesc == b.locatiodesc;

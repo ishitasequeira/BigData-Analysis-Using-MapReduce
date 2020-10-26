@@ -1,0 +1,8 @@
+2.Filter based on sex = 0(female)  avg_female_datavalue_perstate
+
+dataset = LOAD 'hdfs://localhost:9000/finalproject/pig/filter/input/' USING PigStorage(',') AS (ID:int,Year:int, LocationAbbr:chararray, LocationDesc:chararray, PriorityArea1:chararray, Category:chararray, Topic:chararray, Indicator:chararray, Data_Value:double,Confidence_Limit_Low:double, Confidence_Limit_High:double, age:int,sex:int, cp:int, trestbps:int,chol:int, fbs:int, restecg:int, thalach :int, exang :int, oldpeak:double,slope:int, ca:int, thal:int, target:int);
+filter_female = FILTER dataset BY sex == 0;
+location_group = group filter_female by (LocationDesc) ;
+avg_female_datavalue_perstate = foreach location_group generate group, AVG(filter_female.Data_Value) as avg_female_datavalue_perstate;
+STORE avg_female_datavalue_perstate into 'hdfs://localhost:9000/finalproject/pig/filter/output';
+
